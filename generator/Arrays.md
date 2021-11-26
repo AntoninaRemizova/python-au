@@ -4,6 +4,15 @@
 + [String Compression](#string-compression)
 
 ## Two Sum
+http://leetcode.com/problems/two-sum/
+<details><summary>Test cases</summary><blockquote>
+
+```python
+
+
+
+```
+</blockquote></details>
 
 ```python
 class Solution(object):
@@ -17,6 +26,15 @@ class Solution(object):
 ```
 
 ## String Compression
+https://leetcode.com/problems/string-compression/
+<details><summary>Test cases</summary><blockquote>
+
+```python
+
+
+
+```
+</blockquote></details>
 
 ```python
 def compress(chars):
