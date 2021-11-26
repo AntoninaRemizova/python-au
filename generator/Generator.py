@@ -1,5 +1,5 @@
 INPUT_DIR = "String_Compression.txt"
-OUTPUT_DIR = "Arrays.md"
+OUTPUT_DIR = "../Arrays.md"
 
 
 def write_data(file_adress: str, data: str):
