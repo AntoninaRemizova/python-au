@@ -1,4 +1,4 @@
-INPUT_DIR = "String _Compression.txt"
+INPUT_DIR = "String_Compression.txt"
 OUTPUT_DIR = "Arrays.md"
 
 

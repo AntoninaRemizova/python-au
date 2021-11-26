@@ -1,5 +1,5 @@
 import unittest
-import generator_md as gnr
+from garbage import generator_md as gnr
 
 class TestGenerator(unittest.TestCase):
     def test_get_new_md_solution(self):
