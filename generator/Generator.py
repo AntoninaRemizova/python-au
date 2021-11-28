@@ -1,5 +1,6 @@
 INPUT_DIR = "String_Compression.txt"
-OUTPUT_DIR = "../Arrays.md"
+INPUT_TEST = "Empty.txt"
+OUTPUT_DIR = "Arrays.md"
 
 
 def write_data(file_adress: str, data: str):
@@ -8,16 +9,23 @@ def write_data(file_adress: str, data: str):
     file.close()
 
 
-def prepare_data_for_new_file(problem_name, problem_adress, code):
+def prepare_data_for_new_file(problem_name, problem_adress, code, test_code):
     data = ""
     data += "# Arrays\n\n"
     data += "+ [" + problem_name + "](#" + problem_adress[30:-1] + ")\n\n"
-    data = append_code(data, problem_name, code)
+    data = append_code(data, problem_name, code, test_code, problem_adress)
     return data
 
 
-def append_code(data, problem_name, code):
-    data += "## " + problem_name + "\n\n"
+def append_code(data, problem_name, code, test_code, problem_adress):
+    data += "## " + problem_name + "\n"
+    data += problem_adress + "\n"
+    data += "<details><summary>Test cases</summary><blockquote>\n\n"
+    data += "```python\n"
+    for line in test_code:
+        data += line
+    data += "\n```\n"
+    data += "</blockquote></details>\n\n"
     data += "```python\n"
     for line in code:
         data += line
@@ -51,8 +59,12 @@ def main():
     code = new_data.readlines()
     new_data.close()
 
+    test_data = open(INPUT_TEST, "r")
+    test_code = test_data.readlines()
+    test_data.close()
+
     if not ARRAYS_SOURCE:
-        data = prepare_data_for_new_file(problem_name, problem_adress, code)
+        data = prepare_data_for_new_file(problem_name, problem_adress, code, test_code)
         write_data(OUTPUT_DIR, data)
     else:
         ARRAYS_SOURCE = ARRAYS_SOURCE.split("\n")
@@ -63,7 +75,7 @@ def main():
         for line in ARRAYS_SOURCE:
             data += line + "\n"
         data += "\n"
-        data = append_code(data, problem_name, code)
+        data = append_code(data, problem_name, code, test_code, problem_adress)
 
         write_data(OUTPUT_DIR, data)
 
