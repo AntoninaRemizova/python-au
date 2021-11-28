@@ -1,4 +1,4 @@
-# Arrays
+# Linked List
 
 + [206. Reverse Linked List](#reverse-linked-list)
 
