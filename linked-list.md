@@ -83,7 +83,6 @@ class Solution:
             else:
                 elems.next = list2
                 list2 = list2.next
-            print(elems)
             elems = elems.next
         if list1:
             elems.next = list1
